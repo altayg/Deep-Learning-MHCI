@@ -1,5 +1,5 @@
 # Deep-Learning-MHCI
-For MHCI protein-peptide binding predictions: Deep Learning model with CNN and Snakemake workflow.
+For MHC-I protein-peptide binding predictions: Deep Learning model with CNN and Snakemake workflow.
 
 This repository includes a Tensorflow based Deep Learning model, benchmark datasets 
 and a Snakemake workflow for MHC-I protein-peptide binding predictions. The workflow
