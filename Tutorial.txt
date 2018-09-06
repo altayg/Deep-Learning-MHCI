@@ -50,6 +50,10 @@
 
     For this you need multiple CPUs (at least 24GB RAM per CPU) and should be using clusters.
     If not installed, first install Snakemake from https://snakemake.readthedocs.io
+    
+2.0 From Snakefile under the dataset1 folder, replace the name of the Virtual environment 
+    with the name of yours. Replace VE_TF19_py35 with yours in the belwo command. 
+    source activate VE_TF19_py35
 
 2.1 Look at the bash file pbs_submit.sh and modify this line #PBS -M altay@lji.org
     with your own email! You can also modify other lines if consider as needed.
