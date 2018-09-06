@@ -1,0 +1,69 @@
+configfile: "config.json"
+DATA_DIR=config["data"]
+TMP_DIR = config["tmp"]
+#LOC_TMP = "outputs/temp/"
+CODE_DIR = config["PythonCodes"]
+RESULTS_DIR="results_new/"
+
+rule all:
+    input:
+        expand(RESULTS_DIR + "res_{allele}_run0.txt", allele = config["allele"]),
+        #expand(RESULTS_DIR + "res_{allele}_run2.txt", allele = config["allele"]), #If wanted to run till run 2, then replace this with the above line.
+
+rule run_0:
+    input:
+        testfile = DATA_DIR + "{allele}",
+    output:
+        res0_file = RESULTS_DIR + "res_{allele}_run0.txt"
+    params:
+        PythonFile = CODE_DIR + "DLMHC.py",
+        runindex = 0,
+        resdir = RESULTS_DIR,
+        alleleName = "{allele}"
+    message:
+        "The current allele is {wildcards.allele} and in run 0 "
+    shell:
+        """
+        source activate VE_TF19_py35
+        python {params.PythonFile} {input.testfile} 0 {params.resdir} {params.alleleName} {output.res0_file}  | tee -a ./outputs/out_{params.alleleName}.txt
+        """
+
+
+## IN CASE IF WISHED TO IMPLEMENT TRANSFER LEARNING, THEN THE BELOW CODE CAN BE RUN
+# rule run_1:
+#     input:
+#         res0 = RESULTS_DIR + "res_{allele}_run0.txt",
+#         testfile = DATA_DIR + "{allele}"
+#     output:
+#         res1_file = RESULTS_DIR + "res_{allele}_run1.txt"
+#     params:
+#         PythonFile = CODE_DIR + "DLMHC.py",
+#         runindex = 1,
+#         resdir = RESULTS_DIR,
+#         alleleName = "{allele}"
+#     message:
+#         "The current allele is {wildcards.allele} and in run 1 "
+#     shell:
+#         """
+#         source activate VE_TF19_py35
+#         python {params.PythonFile} {input.testfile} 1 {params.resdir} {params.alleleName} {output.res1_file} | tee -a ./outputs/out_{params.alleleName}.txt
+#         """
+#
+# rule run_2:
+#     input:
+#         res1 = RESULTS_DIR + "res_{allele}_run1.txt",
+#         testfile = DATA_DIR + "{allele}"
+#     output:
+#         res2_file = RESULTS_DIR + "res_{allele}_run2.txt"
+#     params:
+#         PythonFile = CODE_DIR + "DLMHC.py",
+#         runindex = 2,
+#         resdir = RESULTS_DIR,
+#         alleleName = "{allele}"
+#     message:
+#         "The current allele is {wildcards.allele} and in run 2 "
+#     shell:
+#         """
+#         source activate VE_TF19_py35
+#         python {params.PythonFile} {input.testfile} 2 {params.resdir} {params.alleleName} {output.res2_file} | tee -a ./outputs/out_{params.alleleName}.txt
+#         """

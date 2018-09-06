@@ -1,0 +1,9 @@
+{
+  "data": "DATA/test_data/",
+  "tmp": "./tmp/",
+  "PythonCodes": "scripts/",
+  "allele": ["B2705", "B5701",
+           "A0201_9mer_1028928", "B0702",  "B2703", "A0201_9mer_1028790",
+           "A0201_10mer_1028790", "A0202", "A0203_9mer",  "A0203_10mer",
+          "A0206_9mer", "A0206_10mer", "A6802_9mer", "A6802_10mer"],
+}

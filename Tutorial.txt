@@ -1,0 +1,74 @@
+### TUTORIAL FOR RUNNING https://github.com/altayg/Deep-Learning-MHCI
+# G. Altay, "Tensorflow Based Deep Learning Model and Snakemake Workflow for Peptide-Protein Binding Predictions", arXiv, 2018.
+
+
+#################################################################################
+### 1. Running in dataset1 on a single allele. ###
+
+1.1 Download the repository and locate the Terminal on Deep-Learning-MHCI/dataset1 folder.
+
+1.2 Make sure the session has at least 24GB of RAM memory and The CPU must support AVX.
+    For example:
+    If working on clusters,
+    you might probably see CPUs with AVX support as follows:
+    $ pbsnodes | egrep '^compute|properties'
+
+    When we run this command in our Linux Terminal, one of the CPUs with the
+    required property appears as follows:
+    compute-0-11.hpc.lji.org
+     properties = public,intel,avx
+
+    Now using this CPU, if wanted to run an interactive session, we can call
+    an interactive session with 32GB of dedicated RAM memory by:
+    $ qsub -I -l mem=32gb,walltime=9:00:00,nodes=compute-0-11.hpc.lji.org
+
+    If not, locate the Terminal again on Deep-Learning-MHCI/dataset1 folder.
+
+    Though, in our clusters it works with these commands, it might change in different clusters.
+    You might contact your System Administrator with these reference commands if needed.
+
+    If working on MAC,
+    you do not need to run above but just make sure you have >24GB available RAM memory.
+
+1.3 Activate the Virtual Environment where Tensorflow was installed.
+    $ source activate Your_Virtual_Environment
+    If all is OK, your Terminal should look similar to this:
+    (Your_Virtual_Environment)...$
+
+    If not installed the Virtual Environment yet, go to tensorflow.org and see
+    install Tensorflow via Virtual Environment with Python 3.
+
+1.4 Now all is ready to run the DL model for a single allele. Run this for the allele A01_01_9:
+
+    $ python3 scripts/DLMHC2.py DATA/test_data/A0202 0 results_dir A0202
+
+    Here, the Deep Learning model is in DLMHC.py script. You should start seeing
+    the results at the Terminal in about 3-5 minutes.
+
+#################################################################################
+### 2. Running in dataset1 with Snakemake Workflow for all the alleles at once ###
+
+    For this you need multiple CPUs (at least 24GB RAM per CPU) and should be using clusters.
+    If not installed, first install Snakemake from https://snakemake.readthedocs.io
+
+2.1 Look at the bash file pbs_submit.sh and modify this line #PBS -M altay@lji.org
+    with your own email! You can also modify other lines if consider as needed.
+    For example, you need to remove or replace [-q peters] as this refers to special
+    compute clusters within the general clusters.
+
+    Then, just submit the bash file to the clusters as follows:
+
+    $ qsub pbs_submit.sh
+
+    If this does not work, you might need to modify some parts of the bash file.
+    You can consult your System Administrator for this if you need.
+
+    In case if you have to re-run, you might need to unlock Snakemake by:
+    $ Snakemake --unlock
+
+    An then you can submit (qsub pbs_submit.sh) again if needed.
+
+    Your results should be available in a new folder 'results_new' after about 3-12 hours.
+
+    Before running all, you may dry-run and see all is OK with Snakefile by:
+    $ snakemake -np

@@ -1,0 +1,28 @@
+{
+    "__default__" :
+    {
+        "walltime" : "walltime=196:00:00",
+        "cores" : "nodes=1:ppn=1:avx",
+        "memory" : "mem=24GB",
+        "output" : "logs/cluster/cluster.out",
+        "error" : "logs/cluster/cluster.err"
+    },
+    "run_0" :
+    {
+        "walltime" : "walltime=196:00:00",
+        "cores" : "nodes=1:ppn=1:avx",
+        "memory" : "mem=26GB"
+    },
+    "run_1" :
+    {
+        "walltime" : "walltime=196:00:00",
+        "cores" : "nodes=1:ppn=1:avx",
+        "memory" : "mem=27GB"
+    },
+    "run_2" :
+    {
+        "walltime" : "walltime=196:00:00",
+        "cores" : "nodes=1:ppn=1:avx",
+        "memory" : "mem=28GB"
+    }
+}
