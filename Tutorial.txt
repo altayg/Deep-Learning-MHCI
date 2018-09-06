@@ -1,5 +1,5 @@
 ### TUTORIAL FOR RUNNING https://github.com/altayg/Deep-Learning-MHCI
-# G. Altay, "Tensorflow Based Deep Learning Model and Snakemake Workflow for Peptide-Protein Binding Predictions", arXiv, 2018.
+# G. Altay, "Tensorflow Based Deep Learning Model and Snakemake Workflow for Peptide-Protein Binding Predictions", bioRxiv, 2018.
 
 
 #################################################################################
