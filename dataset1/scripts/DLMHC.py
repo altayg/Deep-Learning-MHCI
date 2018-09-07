@@ -38,7 +38,7 @@ print(" Test data size " , data['X_test'].shape)
 lr_max = 0.003
 lr_min = 0.001
 lr_ultimate_min= 0.0001
-# learning rate decay #https://github.com/martin-gorner/tensorflow-mnist-tutorial/blob/master/mnist_2.1_five_layers_relu_lrdecay.py
+# learning rate decay
 decay_speed = 40.0 # 0.003-0.0001-2000=>0.9826 done in 5000 iterations
 learning_rate = tf.placeholder(tf.float32, shape=[])
 batch_size = 40 #was 40 for most
@@ -324,7 +324,7 @@ with tf.Session() as sess:
         saver.restore(sess=sess, save_path=save_path)
     for epoch in range(epochs):
         total_iterations += 1 #for Saver
-        #tf.set_random_seed(myseed[0]) #https://stackoverflow.com/questions/36288235/how-to-get-stable-results-with-tensorflow-setting-random-seed?noredirect=1&lq=1
+        #tf.set_random_seed(myseed[0]) 
         #np.random.seed(myseed[1])
         avg_cost = 0
         np.random.shuffle(shuffle_)
@@ -477,5 +477,6 @@ http://adventuresinmachinelearning.com/convolutional-neural-networks-tutorial-te
 https://github.com/AKSHAYUBHAT/VisualSearchServer/blob/master/notebooks/notebook_network.ipynb
 http://cv-tricks.com/tensorflow-tutorial/training-convolutional-neural-network-for-image-classification/
 https://github.com/Hvass-Labs/TensorFlow-Tutorials/blob/master/04_Save_Restore.ipynb
-
+https://github.com/martin-gorner/tensorflow-mnist-tutorial/blob/master/mnist_2.1_five_layers_relu_lrdecay.py
+https://stackoverflow.com/questions/36288235/how-to-get-stable-results-with-tensorflow-setting-random-seed?noredirect=1&lq=1
 '''
