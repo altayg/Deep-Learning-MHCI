@@ -6,7 +6,7 @@
 #PBS -e err
 #PBS -l mem=2GB
 #PBS -m abe
-#PBS -M altay@lji.org
+#PBS -M YourEmail@lji.org
 #PBS -l nodes=1:ppn=1:avx
 
 cd $PBS_O_WORKDIR
