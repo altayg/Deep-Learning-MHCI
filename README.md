@@ -9,4 +9,5 @@ The Tutorial.txt file provides instructions for running the current model.
 
 This repository is a supporting material for the following manuscript and all the details can be seen in it:
 G. Altay, "Tensorflow Based Deep Learning Model and Snakemake Workflow for Peptide-Protein Binding Predictions", bioRxiv, 2018.
+http://biorxiv.org/cgi/content/short/410928v1
 
