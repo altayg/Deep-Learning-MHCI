@@ -57,7 +57,7 @@
 
 2.1 Look at the bash file pbs_submit.sh and modify this line #PBS -M altay@lji.org
     with your own email! You can also modify other lines if consider as needed.
-    For example, you need to remove or replace [-q peters] as this refers to special
+    For example, you need to remove or replace [-q default] with another name that refers to a special
     compute clusters within the general clusters.
 
     Then, just submit the bash file to the clusters as follows:
