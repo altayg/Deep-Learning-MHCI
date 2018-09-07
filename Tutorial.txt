@@ -40,7 +40,7 @@
 
 1.4 Now all is ready to run the DL model for a single allele. Run this for the allele A01_01_9:
 
-    $ python3 scripts/DLMHC2.py DATA/test_data/A0202 0 results_dir A0202
+    $ python3 scripts/DLMHC.py DATA/test_data/A0202 0 results_dir A0202
 
     Here, the Deep Learning model is in DLMHC.py script. You should start seeing
     the results at the Terminal in about 3-5 minutes.
