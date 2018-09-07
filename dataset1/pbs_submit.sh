@@ -15,5 +15,5 @@ WORKDIR=./tmp/$PBS_JOBNAME
 mkdir -p $WORKDIR/logs
 
 snakemake --jobs 74 --latency-wait 90 --cluster-config cluster.json --rerun-incomplete \
---cluster "qsub -l {cluster.walltime} -l {cluster.cores} -l {cluster.memory} -m n -q peters -e $WORKDIR/logs/ -o $WORKDIR/logs/" \
+--cluster "qsub -l {cluster.walltime} -l {cluster.cores} -l {cluster.memory} -m n -q default -e $WORKDIR/logs/ -o $WORKDIR/logs/" \
 --config tmp=$WORKDIR/
