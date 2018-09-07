@@ -46,7 +46,7 @@
     the results at the Terminal in about 3-5 minutes.
 
 #################################################################################
-### 2. Running in dataset1 with Snakemake Workflow for all the alleles at once ###
+### 2. Running in dataset1 with Snakemake Workflow for all the alleles at once in parallel over clusters ###
 
     For this you need multiple CPUs (at least 24GB RAM per CPU) and should be using clusters.
     If not installed, first install Snakemake from https://snakemake.readthedocs.io
