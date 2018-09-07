@@ -9,7 +9,6 @@ import math, os, time, sys, re, datetime
 from datetime import timedelta
 from sklearn.metrics import roc_auc_score, roc_curve, auc
 from scipy import stats
-#import pandas as pd
 
 print("Tensorflow version " + tf.__version__)
 
