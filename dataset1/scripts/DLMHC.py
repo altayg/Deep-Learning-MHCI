@@ -18,7 +18,6 @@ testset = sys.argv[4] # e.g. takes A0202 as input allele name
 print("Test set is ", testset)
 #
 runindx = sys.argv[2] #0 for new run, 1 for follow up runs to use the previous best weights IF WISHED IN THE FUTURE.
-#runindx = 0  #I will manullay change from here as it runs paralel with single argument feed
 runindx = int(runindx)
 print("Iteration index: ", runindx)
 resultdir = sys.argv[3]
