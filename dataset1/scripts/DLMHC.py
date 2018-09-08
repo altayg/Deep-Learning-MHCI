@@ -46,12 +46,12 @@ epochs = 2000
 save_dir = 'checkpoints/' + testset + '/'
 numofinput_channels = 1 # 1 data input per feature
 numofclasses=2  # data labels are binary.
- #for dropout probability
+#for dropout probability
 #prob_ = tf.placeholder_with_default(1.0, shape=())
 #prob_ = tf.placeholder(tf.float32) #drop_out = tf.nn.dropout(layer_1, keep_prob)
 prob_ = tf.placeholder( dtype=tf.float32, shape=() )
 keep_prob_rate=0.5 #0.4
-nnodes_f1= 100#
+nnodes_f1= 100
 #
 input_height = data['X_train'][0].shape[0] #9 or 10, depends onpeptide length
 input_width = data['X_train'][0].shape[1]  #20 , comes from size of unique peptide sequence letters
@@ -223,7 +223,7 @@ def DL_model(inputData):
     print("CNN2d_1_c output reshaped: ", output1c_reshape.get_shape())
     ########
 
-    #WE COMBINE TWO DIFFERENT CONV LAYERS OF DIFFERENT FILTER SIZES HERE
+    #COMBINE THREE PARALLEL CONV CONNECTIONS OF DIFFERENT FILTER SIZES HERE
     flattened = tf.concat([output1a_reshape, output1b_reshape,output1c_reshape], axis=1) #combined the two praralel filters
     out_height = flattened.get_shape().as_list()[1]
     # Fully connected layer
@@ -301,7 +301,6 @@ require_improvement = 300 #int(epochs/10) could change this into %10 of the maxi
 total_iterations = 0
 #
 saver = tf.train.Saver()
-#save_dir = 'checkpoints/16/' #moved above for easer change
 if not os.path.exists(save_dir):
     os.makedirs(save_dir)
 
@@ -317,9 +316,9 @@ with tf.Session() as sess:
     start_time = time.time()
     #initialise the variables
     if(runindx==0):
-        sess.run(init) #USE THIS AT THE VERY FIRST RUN AND THEN DISABLE AND RUN THE FOLLOWING TRAINED WEIGHTS
+        sess.run(init) 
     else:
-        #Resote est model
+        #Restore the previous best model if runindx is >=1
         saver.restore(sess=sess, save_path=save_path)
     for epoch in range(epochs):
         total_iterations += 1 #for Saver
@@ -331,7 +330,7 @@ with tf.Session() as sess:
         X_train_data=X_train_data[shuffle_]
         batchindicesAll=read_data.getIndicesofMinibatchs(featuredata=X_train_data, featurelabels=Y_train_labels, batchsize_=batch_size, isShuffle=True)
         tmp4=0
-        maxAcc=0.0 #initilize
+        maxAcc=0.0 
         if( dyn_LR > lr_min*1.05):
              dyn_LR = lr_min + (lr_max - lr_min) * math.exp(-epoch/decay_speed)
         else:
