@@ -477,4 +477,5 @@ http://cv-tricks.com/tensorflow-tutorial/training-convolutional-neural-network-f
 https://github.com/Hvass-Labs/TensorFlow-Tutorials/blob/master/04_Save_Restore.ipynb
 https://github.com/martin-gorner/tensorflow-mnist-tutorial/blob/master/mnist_2.1_five_layers_relu_lrdecay.py
 https://stackoverflow.com/questions/36288235/how-to-get-stable-results-with-tensorflow-setting-random-seed?noredirect=1&lq=1
+https://machinelearningmastery.com/how-to-one-hot-encode-sequence-data-in-python/
 '''
