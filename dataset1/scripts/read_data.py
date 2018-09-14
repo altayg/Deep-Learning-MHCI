@@ -9,7 +9,6 @@ import random as rnd
 ##################################################################
 ### all the possible sequence letters
 allSequences = 'ACEDGFIHKMLNQPSRTWVY'
-# CREDIT TO: https://machinelearningmastery.com/how-to-one-hot-encode-sequence-data-in-python/
 # Establish a mapping from letters to integers
 char2int = dict((c, i) for i, c in enumerate(allSequences))
 int2char = dict((i, c) for i, c in enumerate(allSequences))
