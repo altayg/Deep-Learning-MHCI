@@ -47,8 +47,6 @@ save_dir = 'checkpoints/' + testset + '/'
 numofinput_channels = 1 # 1 data input per feature
 numofclasses=2  # data labels are binary.
 #for dropout probability
-#prob_ = tf.placeholder_with_default(1.0, shape=())
-#prob_ = tf.placeholder(tf.float32) #drop_out = tf.nn.dropout(layer_1, keep_prob)
 prob_ = tf.placeholder( dtype=tf.float32, shape=() )
 keep_prob_rate=0.5 #0.4
 nnodes_f1= 100
