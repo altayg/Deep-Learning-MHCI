@@ -339,7 +339,7 @@ with tf.Session() as sess:
             batch_y = Y_train_labels[batchindicesAll[tmp4:(tmp4+batch_size)]]
             tmp4 = tmp4 + batch_size
             _, c = sess.run([optimizer_, loss_op], feed_dict={X: batch_x, y_outputholder: batch_y,
-                                                    prob_:keep_prob_rate, learning_rate:dyn_LR})  ## change this ##### !!!! 0.7 was good for dropconnect!
+                                                    prob_:keep_prob_rate, learning_rate:dyn_LR})  
             avg_cost += c / total_Nbatch
         train_acc = accuracy.eval(feed_dict={X: batch_x, y_outputholder: batch_y, prob_: 1.0})
         predict_trains = sess.run(prediction, feed_dict={X: batch_x, prob_: 1.0})
