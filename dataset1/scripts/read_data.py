@@ -1,6 +1,7 @@
 #!/usr/bin/python
 # If you use this script in your studies, here is the reference to cite:
 # G. Altay, "Tensorflow Based Deep Learning Model and Snakemake Workflow for Peptide-Protein Binding Predictions", bioRxiv, 2018.
+# This software is provided with absolutely no warranty. 
 
 import numpy as np
 import pandas as pd
