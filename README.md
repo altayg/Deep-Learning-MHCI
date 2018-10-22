@@ -11,3 +11,4 @@ This repository is a supporting material for the following manuscript and all th
 G. Altay, "Tensorflow Based Deep Learning Model and Snakemake Workflow for Peptide-Protein Binding Predictions", bioRxiv, 2018.
 https://www.biorxiv.org/content/early/2018/09/18/410928
 
+"This software is provided with absolutely no warranty."
