@@ -1,6 +1,7 @@
 # This DLMHC.py script run on dataset 1 of DL-MHC Deep Learning model.
 # If you use this script in your studies, here is the reference to cite:
 # G. Altay, "Tensorflow Based Deep Learning Model and Snakemake Workflow for Peptide-Protein Binding Predictions", bioRxiv, 2018.
+# This software is provided with absolutely no warranty. 
 
 from __future__ import division, print_function, absolute_import
 import tensorflow as tf
